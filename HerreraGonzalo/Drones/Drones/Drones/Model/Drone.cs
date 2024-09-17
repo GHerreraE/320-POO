@@ -1,68 +1,24 @@
 ﻿namespace Drones
 {
-    public static class RandomHelper
-    {
-        private static Random _alea = new Random();
-
-        // Génère un nombre aléatoire entre min et max
-        public static int GetRandom(int min, int max)
-        {
-            return _alea.Next(min, max);
-        }
-    }
-
-    public static class Config
-    {
-        public const int MaxCharge = 1000;       // Charge maximale de la batterie
-        public const int MovementX = 2;          // Déplacement fixe en X
-        public const int MinMovementY = -2;      // Déplacement minimal en Y
-        public const int MaxMovementY = 2;       // Déplacement maximal en Y
-    }
-
+    // Cette partie de la classe Drone définit ce qu'est un drone par un modèle numérique
     public partial class Drone
     {
-        // Champs privés
-        private int _charge;
-        private string _name;
-        private int _x;
-        private int _y;
+        Random alea = new Random();
 
-        // Constructeur pour initialiser les valeurs
-        public Drone(string name)
-        {
-            _name = name;
-            _charge = Config.MaxCharge;
-            _x = 0;
-            _y = 0;
-        }
+        public int charge = 1000;                     // La charge actuelle de la batterie
+        public string name;                           // Un nom
+        public int x ;                                // Position en X depuis la gauche de l'espace aérien
+        public int y;                                 // Position en Y depuis le haut de l'espace aérien
 
-        // Méthodes d'accès aux valeurs encapsulées
-        public int GetCharge()
-        {
-            return _charge;
-        }
 
-        public string GetName()
-        {
-            return _name;
-        }
-
-        public int GetX()
-        {
-            return _x;
-        }
-
-        public int GetY()
-        {
-            return _y;
-        }
-
-        // Méthode pour mettre à jour l'état du drone
+        // Cette méthode calcule le nouvel état dans lequel le drone se trouve après
+        // que 'interval' millisecondes se sont écoulées
         public void Update(int interval)
         {
-            _x += Config.MovementX;              // Déplacement fixe en X
-            _y += RandomHelper.GetRandom(Config.MinMovementY, Config.MaxMovementY + 1); // Déplacement aléatoire en Y
-            _charge--;                           // Consommation d'énergie
+            x += 2;                                    // Il s'est déplacé de 2 pixels vers la droite
+            y += alea.Next(-2, 3);                     // Il s'est déplacé d'une valeur aléatoire vers le haut ou le bas
+            charge--;                                  // Il a dépensé de l'énergie
         }
+
     }
 }

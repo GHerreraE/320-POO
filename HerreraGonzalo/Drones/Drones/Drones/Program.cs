@@ -17,11 +17,23 @@ namespace Drones
             Drone drone = new Drone();
             drone.x = 100;
             drone.y = 100;
-            dronename = "Joe";
+            drone.name = "Joe";
             fleet.Add(drone);
+
+            List<Building> flotte = new List<Building> { };
+            Building immeuble1 = new Building(1, 2, 3, 4, "hola");
+            Building immeuble2 = new Building(3, 4, 5, 6, "ciao");
+
+            flotte.Add(immeuble1);
+            flotte.Add(immeuble2);
+
+
 
             // Démarrage
             Application.Run(new AirSpace(fleet));
+
+
+            
         }
     }
 }
