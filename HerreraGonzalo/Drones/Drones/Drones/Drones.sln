@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drones", "Drones\Drones.csproj", "{2EEE1A5F-56B1-463B-A464-11E112253F45}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject1", "TestProject1\TestProject1.csproj", "{E8780991-B5F1-4082-A4CB-A7C72F006CD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{E8780991-B5F1-4082-A4CB-A7C72F006CD8}"
 	ProjectSection(ProjectDependencies) = postProject
 		{2EEE1A5F-56B1-463B-A464-11E112253F45} = {2EEE1A5F-56B1-463B-A464-11E112253F45}
 	EndProjectSection
