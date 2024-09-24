@@ -14,7 +14,7 @@ namespace Drones
 
             // Création de la flotte de drones
             List<Drone> fleet= new List<Drone>();
-            Drone drone = new Drone();
+            Drone drone = new();
             drone.x = 100;
             drone.y = 100;
             drone.name = "Joe";

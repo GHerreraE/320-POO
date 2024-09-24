@@ -44,7 +44,7 @@ namespace Drones
         // Calcul du nouvel état après que 'interval' millisecondes se sont écoulées
         private void Update(int interval)
         {
-            foreach (Drone drone in fleete)
+            foreach (Drone drone in fleet)
             {
                 drone.Update(interval);
             }

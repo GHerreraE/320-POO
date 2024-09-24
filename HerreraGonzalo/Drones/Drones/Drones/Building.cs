@@ -24,9 +24,17 @@ class Building
 
     public void Render(BufferedGraphics drawingSpace)
     {
-        drawingSpace.Graphics.DrawEllipse(droneBrush, new Rectangle(x - 4, y - 2, 8, 8));
-        drawingSpace.Graphics.DrawString($"{this}", TextHelpers.drawFont, TextHelpers.writingBrush, x + 5, y - 5);
+        drawingSpace.Graphics.DrawEllipse(GetDroneBrush(), new Rectangle(_x - 4, _y - 2, 8, 8));
+        drawingSpace.Graphics.DrawString($"{this}", GetTextHelpers().drawFont, TextHelpers.writingBrush, _x + 5, _y - 5);
     }
 
+    private static object GetTextHelpers()
+    {
+        return TextHelpers;
+    }
 
+    private static object GetDroneBrush()
+    {
+        return GetDroneBrush;
+    }
 }
