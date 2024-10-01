@@ -53,8 +53,4 @@ namespace Drones
             drawingSpace.Graphics.DrawString($"{this}", TextHelpers.drawFont, TextHelpers.writingBrush, x + 5, y - 5);
         }
     }
-
-        
 }
-
-
